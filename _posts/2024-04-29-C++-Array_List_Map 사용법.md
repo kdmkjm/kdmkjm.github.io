@@ -1,5 +1,5 @@
 ---
-title: C++ pair 사용법
+title: C++ Array, List, Map 사용법
 date: 2024-04-29 21:15:00 +09:00
 categories: [Coding_test, C/C++]
 tags:
