@@ -1,0 +1,124 @@
+---
+title: 탐욕 알고리즘 Greedy Algorithm이란?
+date: 2024-05-01 23:22:00 +09:00
+categories: [Coding_test, Algorithm]
+tags:
+  [
+    Coding_test,
+    C,
+    C++,
+    greedy,
+    algorithm,
+    그리디,
+  ]
+---
+
+> Sort 함수는 <algorithm> 헤더에 속해있는 함수이다. sort(start, end)를 이용하여 오름차순으로 정렬해주는 함수이다. 
+> 퀵 소트를 기반으로 하여 시간 복잡도는 n log n이다.
+
+---
+
+## 1. 배열 sort (오름차순) 
+
+```cpp
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+	int arr[10] = { 3, 7, 2, 4, 1, 0, 9, 8, 5, 6 };
+
+	for (int i = 0; i < 10; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << '\n';
+
+	sort(arr, arr + 10);
+
+	for (int i = 0; i < 10; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << '\n';
+}
+```
+
+## 2. vector container sort (내림차순) 
+
+```cpp
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	vector<int> v;
+	for (int i = 0; i < 10; i++)
+	{
+		v.push_back(i);
+	}
+
+	for (int i = 0; i < v.size(); i++)
+	{
+		cout << v.at(i) << " ";
+	}
+	cout << '\n';
+
+	sort(v.begin(), v.end(), greater<int>());
+
+	for (int i = 0; i < v.size(); i++)
+	{
+		cout << v.at(i) << " ";
+	}
+	cout << '\n';
+}
+```
+
+## 3. compare 함수이용 sort
+
+```cpp
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+bool compare(int a, int b)
+{
+	if (a > b)
+	{
+		return true;
+	}
+	else
+		return false;
+}
+
+int main()
+{
+	vector<int> v;
+
+	for (int i = 0; i < 10; i++)
+	{
+		v.push_back(i);
+	}
+
+	for (int i = 0; i < v.size(); i++)
+	{
+		cout << v.at(i) << " ";
+	}
+	cout << '\n';
+
+	sort(v.begin(), v.end(), compare);
+
+	for (int i = 0; i < v.size(); i++)
+	{
+		cout << v.at(i) << " ";
+	}
+}
+```
+
+## 마무리
+---
+따로 퀵 소트를 구현할 필요가 없어 자주 사용되는 편이다.
