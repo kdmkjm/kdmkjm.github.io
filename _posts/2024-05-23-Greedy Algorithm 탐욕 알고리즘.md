@@ -13,112 +13,34 @@ tags:
   ]
 ---
 
-> Sort 함수는 <algorithm> 헤더에 속해있는 함수이다. sort(start, end)를 이용하여 오름차순으로 정렬해주는 함수이다. 
-> 퀵 소트를 기반으로 하여 시간 복잡도는 n log n이다.
+## 1. 그리디 알고리즘(탐욕법, Greedy Algorithm)
+
+---
+> 그리디 알고리즘이란 최적 값을 도출해야하는 상황에서 사용하는 방법론으로
+단계별 최적이라 생각되는 방법을 선택해 나가는 방식으로 진행하여 답을 도출하는 알고리즘이다. 최대한 최적의 값에 가까운 방법을 선택하는 것을 목표로 한다.
 
 ---
 
-## 1. 배열 sort (오름차순) 
+## 2. 그리디 알고리즘의 주요 속성
 
-```cpp
-#include<iostream>
-#include<algorithm>
-using namespace std;
+---
+> 문제 해결 시 두 가지 조건이 성립해야 적용가능.
+> 탐욕 선택 속성: 각 단계에서 최적의 선택을 했을 때 전체 문제에 대한 최적해를 구할 수 있는 경우
+> 최적 부분 구조: 전체의 최적해가 부분의 최적해의 집합으로 구성되는 경우
 
-int main()
-{
-	int arr[10] = { 3, 7, 2, 4, 1, 0, 9, 8, 5, 6 };
+---
 
-	for (int i = 0; i < 10; i++)
-	{
-		cout << arr[i] << " ";
-	}
-	cout << '\n';
+## 3. 그리디 알고리즘 단계
+---
+> 1. 문제의 최적해 구조를 결정
+> 2. 구조에 맞는 절차를 정의
+> 3. 해당 절차에 따라 최적의 방법 수행
+> 4. 해당 수행의 적절정 체크
+> 5. 전체 조건에 충족하지 않으면 해당 수행 결과 제외
+> 6. 모든 수행이 완료되면 결과값의 타당성 체크
 
-	sort(arr, arr + 10);
-
-	for (int i = 0; i < 10; i++)
-	{
-		cout << arr[i] << " ";
-	}
-	cout << '\n';
-}
-```
-
-## 2. vector container sort (내림차순) 
-
-```cpp
-#include <iostream>
-#include <algorithm>
-#include <vector>
-using namespace std;
-
-int main()
-{
-	vector<int> v;
-	for (int i = 0; i < 10; i++)
-	{
-		v.push_back(i);
-	}
-
-	for (int i = 0; i < v.size(); i++)
-	{
-		cout << v.at(i) << " ";
-	}
-	cout << '\n';
-
-	sort(v.begin(), v.end(), greater<int>());
-
-	for (int i = 0; i < v.size(); i++)
-	{
-		cout << v.at(i) << " ";
-	}
-	cout << '\n';
-}
-```
-
-## 3. compare 함수이용 sort
-
-```cpp
-#include <iostream>
-#include <algorithm>
-#include <vector>
-using namespace std;
-
-bool compare(int a, int b)
-{
-	if (a > b)
-	{
-		return true;
-	}
-	else
-		return false;
-}
-
-int main()
-{
-	vector<int> v;
-
-	for (int i = 0; i < 10; i++)
-	{
-		v.push_back(i);
-	}
-
-	for (int i = 0; i < v.size(); i++)
-	{
-		cout << v.at(i) << " ";
-	}
-	cout << '\n';
-
-	sort(v.begin(), v.end(), compare);
-
-	for (int i = 0; i < v.size(); i++)
-	{
-		cout << v.at(i) << " ";
-	}
-}
-```
+---
 
 ## 마무리
 ---
-따로 퀵 소트를 구현할 필요가 없어 자주 사용되는 편이다.
+전체의 타당성을 고려하기 보단 당장의 조건을 해결 해 문제 해결을 하려하는 방법이니만큼, 최소한의 문제 해결 능력으로도 해결할 수 있는 경우가 많다.
