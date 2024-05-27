@@ -1,6 +1,6 @@
 ---
 title: 탐욕 알고리즘 Greedy Algorithm이란?
-date: 2024-05-01 23:22:00 +09:00
+date: 2024-05-23 23:22:00 +09:00
 categories: [Coding_test, Algorithm]
 tags:
   [
